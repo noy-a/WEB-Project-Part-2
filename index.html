@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>FutureWise | דף הבית</title>
+
+    <!-- ייבוא גופנים -->
+    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Heebo:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ייבוא אייקונים -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-right">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="FutureWise" class="logo-img">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">בית</a>
+            <a href="about.html">אודות</a>
+            <a href="products.html">התוכניות שלנו</a>
+            <a href="gallery.html">גלריה</a>
+            <a href="contact.html">צור קשר</a>
+        </nav>
+    </div>
+    <div class="header-left">
+        <a href="login.html" class="btn profile-btn">
+            <i class="bi bi-person-circle"></i> איזור אישי
+        </a>
+        <a href="cart.html" class="btn cart-btn">
+        <i class="bi bi-bag"></i>
+        </a>
+    </div>
+</header>
+
+<!-- סקשן תמונה + טקסט חצי עמוד -->
+<section class="hero-section">
+    <div class="hero-image">
+        <img src="images/image10.jpeg" alt="תמונת החברה">
+    </div>
+    <div class="hero-text">
+        <h1>מעצימים דור חדש של יזמים צעירים</h1>
+        <p>תוכניות יזמות וחינוך פיננסי לבתי ספר</p>
+        <!-- HERO SEARCH -->
+    <form class="hero-search" action="search.html" method="GET">
+    <input type="text" name="q" placeholder="חפש תוכנית...">
+    <button type="submit" class="search-button">
+        <i class="bi bi-search"></i>
+    </button>
+</form>
+
+    </div>
+</section>
+
+<main class="container">
+
+<section class="cards">
+    <div class="card">
+        <img src="images/image2.jpeg" alt="חדשנות" class="card-img">
+        <h3>חדשנות</h3>
+        <p>תהליכי למידה יצירתיים ומעשיים.</p>
+        <a href="products.html" class="card-btn">לצפייה בתוכניות <span>&gt;</span></a>
+    </div>
+
+    <div class="card">
+        <img src="images/image4.jpeg" alt="עבודת צוות" class="card-img">
+        <h3>עבודת צוות</h3>
+        <p>שיתוף פעולה וחשיבה משותפת.</p>
+        <a href="products.html" class="card-btn">לצפייה בתוכניות <span>&gt;</span></a>
+    </div>
+
+    <div class="card">
+        <img src="images/image3.jpeg" alt="האקתונים" class="card-img">
+        <h3>האקתונים</h3>
+        <p>אירועים שמציתים חשיבה מקורית.</p>
+        <a href="products.html" class="card-btn">לצפייה בתוכניות <span>&gt;</span></a>
+    </div>
+
+    <div class="card">
+        <img src="images/image5.jpeg" alt="ליווי מקצועי" class="card-img">
+        <h3>ליווי מקצועי</h3>
+        <p>מנטורים מומחים במהלך כל הדרך.</p>
+        <a href="products.html" class="card-btn">לצפייה בתוכניות <span>&gt;</span></a>
+    </div>
+</section>
+
+
+<!--ביקורות-->
+<section class="testimonials">
+  <h2>מה אומרים עלינו</h2>
+
+  <div class="testimonial-container">
+    <!-- Previous testimonials button -->
+    <button id="prevBtn" class="arrow-btn">❮</button>
+
+    <!-- Testimonials grid -->
+    <div class="testimonials-grid" id="testimonialsGrid"></div>
+
+    <!-- Next testimonials button -->
+    <button id="nextBtn" class="arrow-btn">❯</button>
+  </div>
+</section>
+
+
+
+</main>
+
+<footer>
+    כל הזכויות שמורות © FutureWize
+</footer>
+
+
+<script src="accessibility.js"></script>
+<script src="scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* רקע גלריה */
+body {
+    background-color: var(--primary); /* רקע כחול */
+    color: white;
+}
+
+/* כותרת גלריה */
+.gallery-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 48px;
+}
+
+
+/* קונטיינר גלריה */
+main.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    margin-top: 50px;
+}
+
+/* קרוסלת תמונות */
+.carousel {
+    width: 80%;
+    max-width: 800px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 12px;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+/* חיצי ניווט */
+.carousel-nav {
+    margin-top: 20px; /* רווח מהקרוסלה */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* רווח בין הכפתורים */
+}
+
+.carousel-btn {
+    font-size: 30px;
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background-color: var(--primary);
+    color: var(--bg);
+}
+
+
+/* ------- FOOTER ------- */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+/* כפתור נגישות */
+/* ניגודיות גבוהה */
+body.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+body.high-contrast header, 
+body.high-contrast footer,
+body.high-contrast .product-card {
+    background-color: #000 !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+}
+
+body.high-contrast a, 
+body.high-contrast button {
+    color: #ffff00 !important;
+}
+
+/* -------- רספונסיביות -------- */
+
+/* מסכים קטנים (טלפון נייד) */
+@media screen and (max-width: 600px) {
+    .gallery-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .carousel {
+        width: 95%;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .carousel-nav {
+        width: 95%;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .carousel-btn {
+        font-size: 24px;
+        padding: 8px 16px;
+    }
+}
+
+/* מסכים בינוניים (טאבלט) */
+@media screen and (max-width: 900px) {
+    .gallery-title {
+        font-size: 40px;
+    }
+
+    .carousel {
+        width: 90%;
+        height: 400px;
+    }
+
+    .carousel-nav {
+        width: 90%;
+    }
+
+    .carousel-btn {
+        font-size: 28px;
+        padding: 10px 18px;
+    }
+}
+
+/* שמירה על אחידות גם במסכי HD */
+@media screen and (min-width: 1200px) {
+    .carousel {
+        max-width: 1000px;
+        height: 600px;
+    }
+
+    .carousel-nav {
+        max-width: 1000px;
+    }
+}

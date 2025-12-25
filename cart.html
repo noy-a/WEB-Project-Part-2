@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>FutureWize – העגלה שלי</title>
+
+    <link rel="stylesheet" href="cartStyle.css">
+
+    <!-- ייבוא גופנים -->
+    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Heebo:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+
+<!--סרגל כלים-->
+<header>
+    <div class="header-right">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="FutureWise" class="logo-img">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">בית</a>
+            <a href="about.html">אודות</a>
+            <a href="products.html">התוכניות שלנו</a>
+            <a href="gallery.html">גלריה</a>
+            <a href="contact.html">צור קשר</a>
+        </nav>
+    </div>
+    <div class="header-left">
+        <a href="login.html" class="btn profile-btn">
+            <i class="bi bi-person-circle"></i> איזור אישי
+        </a>
+        <a href="cart.html" class="btn cart-btn">
+        <i class="bi bi-bag"></i>
+        </a>
+    </div>
+</header>
+
+<!-- ========================== -->
+<!--           CART PAGE        -->
+<!-- ========================== -->
+
+<main class="cart-page">
+
+    <h1 class="cart-title">
+        <i class="bi bi-cart4 cart-icon"></i>
+        העגלה שלי
+    </h1>
+
+    <section class="cart-layout">
+
+        <!-- LEFT: CART ITEMS -->
+        <section class="cart-items" id="cartItems"></section>
+
+        <!-- RIGHT: SUMMARY -->
+        <aside class="cart-summary">
+            <h2 class="summary-title">סיכום ההזמנה</h2>
+
+            <p class="summary-label">סה״כ נבחר</p>
+            <p class="summary-total" id="totalPrice">₪0</p>
+
+            <p class="summary-note">
+                התשלום מתבצע באמצעות תיאום מול נציג FutureWize
+            </p>
+
+            <button class="checkout-btn" onclick="contactRepresentative()">
+                העברת פנייה לנציג
+            </button>
+        </aside>
+
+    </section>
+
+</main>
+
+<!-- ========================== -->
+<!--           FOOTER           -->
+<!-- ========================== -->
+
+<footer>
+    כל הזכויות שמורות © FutureWize
+</footer>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

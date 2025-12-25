@@ -1,0 +1,188 @@
+/* ------- LOGIN PAGE STYLES ------- */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--primary);
+    font-family: 'Open Sans', Heebo, Alef;
+}
+
+.login-wrapper {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start; /* דוחף למעלה */
+    align-items: center;         /* שומר במרכז אופקית */
+    padding-top: 20px;           /* המרחק של הטופס מהחלק העליון */
+    padding-bottom: 50px;        /* המרחק של הטופס מהחלק התחתון */
+}
+
+
+/* כפתור חזרה לדף הבית */
+.back-home {
+    position: absolute;
+    top: 25px; /* מרחק כפתור החזרה מראש הדף */
+    right: 34px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    transition: 0.2s ease;
+}
+
+.back-home:hover {
+    color: var(--bg);
+}
+
+
+/* קונטיינר התחברות */
+.login-container {
+    width: 380px;
+    margin: 120px auto;
+    padding: 20px;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* כותרת התחברות */
+.login-container h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+/* טופס */
+.login-container form label {
+    display: block;
+    text-align: right;
+    margin-bottom: 6px;
+    font-weight: 650;
+    font-size: 13;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 15px;
+}
+
+/* כפתור התחברות */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    margin-top: 6px;
+    border: none;
+    border-radius: 8px;
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.login-container button:hover {
+    background: #04a55e;
+}
+
+/* קונטיינר שמכיל את קישורי שכחתי סיסמה והירשם לאתר */
+.login-links {
+    margin-top: 18px;
+    text-align: center;
+}
+
+/* עיצוב קישורי שכחתי סיסמה והירשם לאתר */
+.login-links a {
+    display: inline-block;
+    margin-top: 4px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .login-container {
+    width: 80%;
+    margin: 100px auto;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-wrapper {
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .login-container {
+    width: 90%;
+    margin: 80px auto;
+    padding: 16px;
+  }
+
+  .back-home {
+    font-size: 18px;
+    top: 15px;
+    right: 20px;
+  }
+
+  .login-container h2 {
+    font-size: 22px;
+  }
+
+  .login-container input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .login-container button {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .login-links a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    margin: 60px auto;
+    padding: 12px;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+
+  .login-container input,
+  .login-container button {
+    font-size: 14px;
+  }
+
+  .back-home {
+    font-size: 16px;
+    top: 10px;
+    right: 15px;
+  }
+}
+

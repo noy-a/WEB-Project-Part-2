@@ -1,0 +1,423 @@
+/* ------- COLOR PALETTE ------- */
+:root {
+--primary: #0A0B23;
+--accent: #06c371;
+--bg: #FFFFFF;
+--text: #0A0B23;
+--card: #FFFFFF;
+--border: #E5E5E5;
+}
+
+/* ------- RESET ------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  font-family: Open Sans, Heebo, Alef;
+  }
+
+/* ------- GLOBAL ------- */
+html, body {
+height: 100%;
+margin: 0;
+}
+
+body {
+background: var(--bg);
+color: var(--text);
+line-height: 1.6;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+padding-top: 65px; /* גובה header */
+}
+
+/* ------- HEADER ------- */
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 65px;
+padding: 0 20px;
+background: var(--primary);
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+}
+
+.header-right {
+display: flex;
+align-items: center;
+gap: 40px;
+}
+
+.header-left {
+display: flex;
+flex-direction: row-reverse;
+}
+
+/* כפתורי פרופיל ועגלה */
+.profile-btn {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 6px 10px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 650;
+background: var(--accent);
+color: var(--primary);
+transition: 0.2s ease;
+}
+
+.profile-btn:hover {
+background: white;
+color: var(--accent);
+}
+
+.cart-btn i {
+color: white;
+font-size: 22px;
+margin-left: 19px;
+position: relative;
+top: 1px;
+}
+
+.cart-btn:hover {
+transform: scale(1.1);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+nav a {
+color: white;
+margin-left: 20px;
+text-decoration: none;
+font-weight: 650;
+transition: 0.2s ease;
+}
+
+nav a:hover {
+color: var(--accent);
+}
+
+.logo {
+display: flex;
+align-items: center;
+}
+
+.logo-img {
+height: 40px;
+width: auto;
+}
+
+
+
+
+/* ============================= */
+/*        ABOUT – HERO AREA      */
+/* ============================= */
+
+.about-hero {
+    position: relative;
+    background-image: url("images/image9.jpg");
+    background-size: cover;
+    background-position: center top;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px;
+    color: var(--bg);
+}
+
+/* שכבת שקיפות מעל התמונה */
+.about-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55); /* רמת שקיפות גבוהה יותר */
+    z-index: 0;
+}
+
+
+/* כותרת מי אנחנו */
+.about-hero h2 {
+    font-size: 44px;
+    font-weight: 700;
+    margin-top: 18px;
+    margin-bottom: 15px;
+    color: var(--bg);
+}
+
+/*  טקסט מתחת לכותרת מי אנחנו */
+.about-hero p {
+    max-width: 850px;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 2; /* גודל הרווח בין השורות */
+    color: var(--white);
+}
+
+
+/* ============================= */
+/*        TEAM SECTION           */
+/* ============================= */
+
+.team-section {
+    text-align: center;
+    padding: 60px 20px 20px 20px; 
+}
+
+
+/* כותרת הצוות שלנו */
+.team-section h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 30px;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 25px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.team-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+/* ============================= */
+/*        OFFER SECTION          */
+/* ============================= */
+
+.offer-section {
+    padding: 20px 20px 60px 20px; 
+    text-align: center;
+}
+
+
+/* כותרת מה אנחנו מציעים */
+.offer-section h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--primary);
+}
+
+.offer-section p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 2;
+    color: var(--heading);
+}
+
+/* ============================= */
+/*      FADE-IN ANIMATION        */
+/* ============================= */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.fade-in-delay {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeInUp 1.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ------- FOOTER ------- */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+/* כפתור נגישות */
+/* ניגודיות גבוהה */
+body.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+body.high-contrast header, 
+body.high-contrast footer,
+body.high-contrast .product-card {
+    background-color: #000 !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+}
+
+body.high-contrast a, 
+body.high-contrast button {
+    color: #ffff00 !important;
+}
+
+
+/* --- RESPONSIVE --- */
+
+/* טאבלטים: עד 1024px */
+@media (max-width: 1024px) {
+  .about-hero {
+    padding: 100px 20px;
+    min-height: 500px;
+  }
+
+  .about-hero h2 {
+    font-size: 36px;
+  }
+
+  .about-hero p {
+    font-size: 22px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+  }
+
+  .team-card {
+    padding: 20px;
+  }
+
+  .offer-section h2 {
+    font-size: 32px;
+  }
+
+  .offer-section p {
+    font-size: 18px;
+  }
+}
+
+/* מובייל גדול: עד 768px */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .header-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-text,
+  .about-hero p {
+    text-align: center;
+  }
+
+  .about-hero h2 {
+    font-size: 28px;
+  }
+
+  .about-hero p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-card {
+    max-width: 90%;
+    margin: 0 auto 20px auto;
+  }
+
+  .offer-section h2 {
+    font-size: 28px;
+  }
+
+  .offer-section p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+/* מובייל קטן: עד 480px */
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 80px 10px;
+    min-height: 400px;
+  }
+
+  .about-hero h2 {
+    font-size: 24px;
+  }
+
+  .about-hero p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .team-card {
+    padding: 15px;
+  }
+
+  .team-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .offer-section h2 {
+    font-size: 24px;
+  }
+
+  .offer-section p {
+    font-size: 14px;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .profile-btn, .cart-btn {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+}
+

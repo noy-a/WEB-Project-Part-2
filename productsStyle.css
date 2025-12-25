@@ -1,0 +1,472 @@
+/* ------- COLOR PALETTE ------- */
+:root {
+--primary: #0A0B23;
+--accent: #06c371;
+--bg: #FFFFFF;
+--text: #0A0B23;
+--card: #FFFFFF;
+--border: #E5E5E5;
+}
+
+/* ------- RESET ------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  font-family: Open Sans, Heebo, Alef;
+  }
+
+/* ------- GLOBAL ------- */
+html, body {
+height: 100%;
+margin: 0;
+}
+
+body {
+background: var(--bg);
+color: var(--text);
+line-height: 1.6;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+padding-top: 65px; /* גובה header */
+}
+
+/* ------- HEADER ------- */
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 65px;
+padding: 0 20px;
+background: var(--primary);
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+}
+
+.header-right {
+display: flex;
+align-items: center;
+gap: 40px;
+}
+
+.header-left {
+display: flex;
+flex-direction: row-reverse;
+}
+
+/* כפתורי פרופיל ועגלה */
+.profile-btn {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 6px 10px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 650;
+background: var(--accent);
+color: var(--primary);
+transition: 0.2s ease;
+}
+
+.profile-btn:hover {
+background: white;
+color: var(--accent);
+}
+
+.cart-btn i {
+color: white;
+font-size: 22px;
+margin-left: 19px;
+position: relative;
+top: 1px;
+}
+
+.cart-btn:hover {
+transform: scale(1.1);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+nav a {
+color: white;
+margin-left: 20px;
+text-decoration: none;
+font-weight: 650;
+transition: 0.2s ease;
+}
+
+nav a:hover {
+color: var(--accent);
+}
+
+.logo {
+display: flex;
+align-items: center;
+}
+
+.logo-img {
+height: 40px;
+width: auto;
+}
+
+
+/* ------- HERO SECTION ------- */
+.hero h1 {
+    font-size: 48px;      /* כותרת ראשית */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 24px;      /* טקסט משנה */
+    font-weight: 400;
+    color: #444;
+}
+
+/* ------- FILTER BUTTONS ------- */
+.filter-buttons {
+    display: flex;
+    gap: 10px; /* רווח בין הכפתורים */
+    justify-content: center; /* מרכז אופקי */
+    margin-bottom: 20px; /* רווח מתחת */
+    flex-wrap: wrap; /* שורות נוספות אם המסך קטן */
+}
+
+.filter-buttons .filter-btn {
+    background-color: var(--primary);
+    color: var(--bg);
+    border: 2px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+
+.filter-buttons .filter-btn:hover {
+    background-color: var(--bg);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* מצב נבחר */
+.filter-buttons .filter-btn.active {
+    background-color: var(--bg);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+
+
+/* ------- CARD DESIGN ------- */
+.products-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.products-grid {
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px 5px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: var(--primary);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 280px; 
+    min-width: 230px;
+    height: 400px;
+    flex: 0 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; 
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.product-card:hover .card-content h3,
+.product-card:hover .card-content p,
+.product-card:hover .info-scroll p {
+    color: var(--bg);
+    transition: color 0.3s ease; /* הופך את שינוי הצבע לחלק ונעים */
+}
+
+.program-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* לוקח את כל הגובה שנותר מתחת לתמונה */
+    overflow: hidden;
+}
+
+.card-content h3 { 
+    margin-top: 15px;
+    margin-bottom: 8px; 
+    color: var(--bg); 
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.card-content p { 
+    font-size: 14px; 
+    color: var(--bg); 
+    line-height: 1.4;
+    margin-bottom: 10px;
+    flex-grow: 1; /* דוחף את הכפתורים למטה במצב רגיל */
+}
+
+.card-content .initial-text {
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 24px; /* מוריד מעט את הטקסט למטה */
+}
+
+
+/* קונטיינר לגלילה בתוך המידע המורחב */
+.info-scroll {
+    flex-grow: 1; /* דוחף את הכפתורים למטה במצב מורחב */
+    overflow-y: auto;
+    text-align: right;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* עיצוב פס הגלילה */
+.info-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+.info-scroll::-webkit-scrollbar-thumb {
+    background: var(--bg);
+    border-radius: 10px;
+}
+
+
+/* ------- CARD BUTTONS ------- */
+.card-actions {
+    margin-top: auto; 
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding: 0 5px 15px 5px;
+    flex-shrink: 0;
+}
+
+.more-info-btn, .add-to-cart-btn {
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.add-to-cart-btn {
+    width: 150px;
+}
+
+.more-info-btn:hover, .add-to-cart-btn:hover {
+    background: var(--bg);
+    color: var(--accent);
+}
+
+/* ------- SLIDER ARROWS ------- */
+.slider-arrow {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+.slider-arrow:hover {
+    background: var(--accent);
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* ------- FOOTER ------- */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+/* כפתור נגישות */
+/* ניגודיות גבוהה */
+body.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+body.high-contrast header, 
+body.high-contrast footer,
+body.high-contrast .product-card {
+    background-color: #000 !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+}
+
+body.high-contrast a, 
+body.high-contrast button {
+    color: #ffff00 !important;
+}
+
+
+/* --- RESPONSIVE --- */
+
+/* טאבלטים: עד 1024px */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 20px;
+    }
+
+    .products-grid {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 250px;
+        height: auto;
+    }
+
+    .card-content .initial-text {
+        font-size: 16px;
+    }
+
+    .filter-buttons .filter-btn {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+}
+
+/* מובייל גדול: עד 768px */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .header-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: none; /* מסתיר את הניווט במובייל */
+    }
+
+    .profile-btn, .cart-btn {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+
+    .products-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 16px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+    }
+}
+
+/* מובייל קטן: עד 480px */
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 10px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+    .hero p {
+        font-size: 14px;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-buttons .filter-btn {
+        width: 100%;
+        padding: 8px 0;
+        font-size: 14px;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .program-img {
+        height: 120px;
+    }
+
+    .card-content .initial-text {
+        font-size: 14px;
+    }
+}
